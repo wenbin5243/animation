@@ -1,0 +1,65 @@
+.loading{
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border:2px solid #414444;
+  position: relative;
+  animation:loading 12s linear infinite;
+  &:before{
+    content: '';
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background:#414444;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-50%); 
+  }
+  b{
+    width: 14px;
+    height: 14px;
+    background: #52524e;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-left: -7px;
+    margin-top:-7px;
+  }
+  i{
+    width: 2px;
+    height: 70px;
+    background: #414444;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-top: -35px;
+  }
+}
+
+@for $i from 1 through 12{
+  .loading i:nth-of-type(#{$i}){
+    transform:rotate(30deg *$i) translate(17px,34px);
+  }
+  .loading b:nth-of-type(#{$i}){
+    transform:rotate(30deg * $i) translate(-7px,63px);
+    animation:loading_b#{$i} 12s ease-in-out -1s * $i infinite;
+  }
+  @keyframes loading_b#{$i}{
+    8.3%,24.9%{
+      transform:rotate(30deg * $i) translate(10px,63px) ;
+    }
+    33.2%,74.7%{
+      transform:rotate(30deg * $i) translate(11px,31px) ;
+    }
+    83%,100%{
+      transform:rotate(30deg * $i) translate(-7px,63px); 
+    }
+  }
+}
+@keyframes loading{
+  100%{
+    transform:rotate(360deg);
+  }
+}
