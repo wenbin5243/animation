@@ -2,64 +2,64 @@
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  border:2px solid #414444;
   position: relative;
-  animation:loading 12s linear infinite;
+  transform-style: preserve-3d;
+  perspective: 800;
+  perspective-origin: center bottom;
+  box-reflect: below 0px linear-gradient(transparent 80%, #fff);
   &:before{
     content: '';
-    width: 36px;
-    height: 36px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background:#414444;
     position: absolute;
     left: 50%;
     top: 50%;
-    transform:translate(-50%,-50%); 
-  }
-  b{
-    width: 14px;
-    height: 14px;
-    background: #52524e;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    top:50%;
-    margin-left: -7px;
-    margin-top:-7px;
+    margin-left: -15px;
+    margin-top: -15px;
+    transform:rotate(180deg) translate(0px,30px);
+    animation:loading_ball 3.6s linear infinite;
+    z-index: 2;
   }
   i{
-    width: 2px;
-    height: 70px;
-    background: #414444;
+    width: 6px;
+    height: 30px;
     position: absolute;
     left: 50%;
     top:50%;
-    margin-top: -35px;
+    margin-top: -15px;
+    margin-left: -3px;
+  }
+  b{
+    position: absolute;
+    width: 6px;
+    height: 30px;
+    background: #999;
+    border-radius:2px;
   }
 }
 
-@for $i from 1 through 12{
+@for $i from 1 through 36{
   .loading i:nth-of-type(#{$i}){
-    transform:rotate(30deg *$i) translate(17px,34px);
-  }
-  .loading b:nth-of-type(#{$i}){
-    transform:rotate(30deg * $i) translate(-7px,63px);
-    animation:loading_b#{$i} 12s ease-in-out -1s * $i infinite;
-  }
-  @keyframes loading_b#{$i}{
-    8.3%,24.9%{
-      transform:rotate(30deg * $i) translate(10px,63px) ;
-    }
-    33.2%,74.7%{
-      transform:rotate(30deg * $i) translate(11px,31px) ;
-    }
-    83%,100%{
-      transform:rotate(30deg * $i) translate(-7px,63px); 
+    transform:rotate(10deg *$i) translate(0px,50px);
+    b{
+      animation:loading_b 3.6s ease-in-out -0.1s *$i infinite;
     }
   }
 }
-@keyframes loading{
+@keyframes loading_b{
+  50%{
+    transform: rotateX(-60deg);
+    box-shadow:0 8px 0 #777;
+  }
+  40%,60%{
+    transform: rotateX(0);
+    box-shadow:none;
+  }
+}
+@keyframes loading_ball{
   100%{
-    transform:rotate(360deg);
+    transform:rotate(-180deg) translate(0px,30px);
   }
 }
