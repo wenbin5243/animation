@@ -1,0 +1,73 @@
+
+.bg{
+  height:600px;
+  width: 800px;
+  overflow: hidden;
+  position:relative;
+}
+.group{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+span{
+  width: 0px;
+  height:0px;
+  border-style:solid;
+  border-color:#000 transparent transparent transparent; 
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  
+}
+@for $j from 1 through 6{
+  $border-width:60px /pow(2,$j) *2;
+  .group:nth-child(#{$j}) span{
+    border-width:$border-width *1.732  $border-width;
+    margin-left:-$border-width;
+    margin-top: -$border-width *1.732;
+  }
+  @for $i from 1 through 6{
+    .group:nth-child(#{$j}) span:nth-child(#{$i}){
+      transform: rotate(60deg * $i ) translate($border-width *2,0);  
+      animation: ani#{$j}-#{$i} 3s infinite;
+    }
+    @keyframes ani#{$j}-#{$i}{
+      30%{
+        transform: rotate(60deg * $i +20deg) translate($border-width *2 +100px *(7 - $j)); 
+      }
+      100%{
+        transform: rotate(60deg * $i +120deg) translate($border-width *2); 
+      }
+    }
+  }
+  @for $i from 7 through 12{
+    .group:nth-child(#{$j}) span:nth-child(#{$i}){
+      transform: rotate(60deg * $i - 240deg) translate($border-width *3,$border-width *1.732); 
+      animation: ani#{$j}-#{$i} 3s infinite; 
+    }
+    @keyframes ani#{$j}-#{$i}{
+      30%{
+        transform: rotate(60deg * $i - 200deg) translate($border-width *3 +100px *(7 - $j),$border-width *1.732); 
+      }
+      100%{
+        transform: rotate(60deg * $i - 120deg) translate($border-width *3,$border-width *1.732); 
+      }
+    }
+  }
+  @for $i from 13 through 18{
+    .group:nth-child(#{$j}) span:nth-child(#{$i}){
+      transform: rotate(60deg * $i - 240deg) translate($border-width *2,$border-width *1.732 *2);  
+      animation: ani#{$j}-#{$i} 3s infinite;
+    }
+    @keyframes ani#{$j}-#{$i}{
+      30%{
+        transform: rotate(60deg * $i - 180deg) translate($border-width *2 +100px *(7 - $j),$border-width *1.732 *2);  
+      }
+      100%{
+        transform: rotate(60deg * $i - 120deg) translate($border-width *2,$border-width *1.732 *2);  
+      }
+    }
+  }
+}

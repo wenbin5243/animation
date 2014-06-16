@@ -1,0 +1,309 @@
+.loading {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid #414444;
+  position: relative;
+  animation: loading 12s linear infinite;
+}
+.loading:before {
+  content: '';
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #414444;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading b {
+  width: 14px;
+  height: 14px;
+  background: #52524e;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -7px;
+  margin-top: -7px;
+}
+.loading i {
+  width: 2px;
+  height: 70px;
+  background: #414444;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -35px;
+}
+
+.loading i:nth-of-type(1) {
+  transform: rotate(30deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(1) {
+  transform: rotate(30deg) translate(-7px, 63px);
+  animation: loading_b1 12s ease-in-out -1s infinite;
+}
+
+@keyframes loading_b1 {
+  8.3%,24.9% {
+    transform: rotate(30deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(30deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(30deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(2) {
+  transform: rotate(60deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(2) {
+  transform: rotate(60deg) translate(-7px, 63px);
+  animation: loading_b2 12s ease-in-out -2s infinite;
+}
+
+@keyframes loading_b2 {
+  8.3%,24.9% {
+    transform: rotate(60deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(60deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(60deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(3) {
+  transform: rotate(90deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(3) {
+  transform: rotate(90deg) translate(-7px, 63px);
+  animation: loading_b3 12s ease-in-out -3s infinite;
+}
+
+@keyframes loading_b3 {
+  8.3%,24.9% {
+    transform: rotate(90deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(90deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(90deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(4) {
+  transform: rotate(120deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(4) {
+  transform: rotate(120deg) translate(-7px, 63px);
+  animation: loading_b4 12s ease-in-out -4s infinite;
+}
+
+@keyframes loading_b4 {
+  8.3%,24.9% {
+    transform: rotate(120deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(120deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(120deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(5) {
+  transform: rotate(150deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(5) {
+  transform: rotate(150deg) translate(-7px, 63px);
+  animation: loading_b5 12s ease-in-out -5s infinite;
+}
+
+@keyframes loading_b5 {
+  8.3%,24.9% {
+    transform: rotate(150deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(150deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(150deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(6) {
+  transform: rotate(180deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(6) {
+  transform: rotate(180deg) translate(-7px, 63px);
+  animation: loading_b6 12s ease-in-out -6s infinite;
+}
+
+@keyframes loading_b6 {
+  8.3%,24.9% {
+    transform: rotate(180deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(180deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(180deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(7) {
+  transform: rotate(210deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(7) {
+  transform: rotate(210deg) translate(-7px, 63px);
+  animation: loading_b7 12s ease-in-out -7s infinite;
+}
+
+@keyframes loading_b7 {
+  8.3%,24.9% {
+    transform: rotate(210deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(210deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(210deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(8) {
+  transform: rotate(240deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(8) {
+  transform: rotate(240deg) translate(-7px, 63px);
+  animation: loading_b8 12s ease-in-out -8s infinite;
+}
+
+@keyframes loading_b8 {
+  8.3%,24.9% {
+    transform: rotate(240deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(240deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(240deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(9) {
+  transform: rotate(270deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(9) {
+  transform: rotate(270deg) translate(-7px, 63px);
+  animation: loading_b9 12s ease-in-out -9s infinite;
+}
+
+@keyframes loading_b9 {
+  8.3%,24.9% {
+    transform: rotate(270deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(270deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(270deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(10) {
+  transform: rotate(300deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(10) {
+  transform: rotate(300deg) translate(-7px, 63px);
+  animation: loading_b10 12s ease-in-out -10s infinite;
+}
+
+@keyframes loading_b10 {
+  8.3%,24.9% {
+    transform: rotate(300deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(300deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(300deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(11) {
+  transform: rotate(330deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(11) {
+  transform: rotate(330deg) translate(-7px, 63px);
+  animation: loading_b11 12s ease-in-out -11s infinite;
+}
+
+@keyframes loading_b11 {
+  8.3%,24.9% {
+    transform: rotate(330deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(330deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(330deg) translate(-7px, 63px);
+  }
+}
+.loading i:nth-of-type(12) {
+  transform: rotate(360deg) translate(17px, 34px);
+}
+
+.loading b:nth-of-type(12) {
+  transform: rotate(360deg) translate(-7px, 63px);
+  animation: loading_b12 12s ease-in-out -12s infinite;
+}
+
+@keyframes loading_b12 {
+  8.3%,24.9% {
+    transform: rotate(360deg) translate(10px, 63px);
+  }
+
+  33.2%,74.7% {
+    transform: rotate(360deg) translate(11px, 31px);
+  }
+
+  83%,100% {
+    transform: rotate(360deg) translate(-7px, 63px);
+  }
+}
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+  }
+}

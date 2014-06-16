@@ -1,0 +1,50 @@
+.loading{
+  width:100px;
+  height:10opx;
+  position:relative;
+  margin:100px auto;
+  transform-style:preserve-3d;  
+  transform:rotateX(60deg);
+  .columm{
+    position:absolute;
+    transform-style:preserve-3d;  
+    width:20px;
+    height:20px;
+    top:50%;
+    left:50%;
+    margin-top:-10px;
+    margin-left:-10px;
+  }
+  b{
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ccc;
+    border:1px solid #333;
+    position:absolute;
+  }
+}
+@for $i from 1 through 10{
+  .columm:nth-child(#{$i}){
+    transform:rotate(36deg *$i +270deg) translate(-50px,0);
+    animation:loading_columm#{$i} 5s linear infinite;
+    b{
+      animation:loading_b 5s linear -0.5s *$i infinite;
+    }
+  }
+  @keyframes loading_columm#{$i}{
+    100%{
+      transform:rotate(36deg *$i + 630deg) translate(-50px,0);
+    }
+  }
+}
+@for $i from 1 through 20{
+  .loading b:nth-child(#{$i}){
+    transform:translateZ(1px *$i)
+  }
+}
+@keyframes loading_b{
+  25%,75%{
+    transform:translateZ(0)
+  }
+}
