@@ -1,0 +1,41 @@
+html,body{
+  height:100%;
+  display: flex;
+  margin:auto;
+}
+.circle,i{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+i{
+  width: 10px;
+  height:10px;
+  border-radius: 50%;
+  background:#000;
+}
+
+@for $i from 1 through 20{
+  .circle:nth-child(#{$i}){
+    animation:circle-#{$i} 4s 0.1s *$i infinite;
+    @for $j from 1 through 4 *$i{
+      i:nth-child(#{$j}){
+        transform: rotate(90deg *$j /$i) translatex(1em *$i);
+      }
+    }
+  }
+  @keyframes circle-#{$i}{
+    @if $i %2 == 0{
+      25%,100%{
+        transform: rotate(90deg /$i);
+      }
+    }
+    @if $i %2 == 1{
+      25%,100%{
+        transform: rotate(-90deg /$i);
+      }
+    }
+  }
+}

@@ -1,0 +1,288 @@
+.bg {
+  height: 600px;
+  width: 800px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cube {
+  width: 3500px;
+  height: 3500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: div 3s linear infinite;
+}
+
+span {
+  width: 40px;
+  height: 40px;
+  margin: 230px;
+  background: #000;
+  float: left;
+}
+
+span:nth-child(1) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(2) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(3) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(4) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(5) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(6) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(7) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(8) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(9) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(10) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(11) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(12) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(13) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(14) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(15) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(16) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(17) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(18) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(19) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(20) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(21) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(22) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(23) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(24) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(25) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(26) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(27) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(28) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(29) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(30) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(31) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(32) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(33) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(34) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(35) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(36) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(37) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(38) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(39) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(40) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(41) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(42) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(43) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(44) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(45) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(46) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(47) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+span:nth-child(48) {
+  transform: scale(0) rotate(0deg);
+  animation: odd 3s linear infinite;
+}
+
+span:nth-child(49) {
+  transform: scale(7);
+  animation: even 3s linear infinite;
+}
+
+@keyframes odd {
+  100% {
+    transform: scale(1) rotate(180deg);
+    margin: 0;
+  }
+}
+@keyframes even {
+  100% {
+    transform: scale(1);
+    margin: 0;
+  }
+}
+@keyframes div {
+  100% {
+    width: 280px;
+    height: 280px;
+  }
+}

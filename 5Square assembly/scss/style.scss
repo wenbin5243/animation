@@ -1,0 +1,56 @@
+$margin:230px;
+.bg{
+  height:600px;
+  width: 800px;
+  overflow: hidden;
+  position:relative;
+}
+.cube{
+  width: 280px + $margin * 14;
+  height: 280px + $margin * 14;
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  animation:div 3s linear infinite;
+}
+span{
+  width: 40px;
+  height:40px;
+  margin:$margin;
+  background:#000;
+  float:left;
+}
+@for $i from 1 through 49{
+  @if $i % 2 == 0{
+    span:nth-child(#{$i}){
+      transform:scale(0) rotate(0deg);
+      animation: odd 3s linear infinite;
+    }
+  }
+  @if $i % 2 == 1{
+    span:nth-child(#{$i}){
+      transform:scale(7);
+      animation: even 3s linear infinite;
+    }
+  }
+
+}
+@keyframes odd{
+  100%{
+    transform:scale(1) rotate(180deg);
+    margin:0; 
+  }
+}
+@keyframes even{
+  100%{
+    transform:scale(1);
+    margin:0;
+  }
+}
+@keyframes div{
+  100%{
+    width: 280px;
+    height: 280px;
+  }
+}

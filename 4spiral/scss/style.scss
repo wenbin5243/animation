@@ -1,0 +1,35 @@
+html,body{
+  height:100%;
+  display: flex;
+  margin:auto;
+  transform-style:preserve-3d;
+  perspective: 460;
+  animation:body 1s infinite;
+}
+.circle,i{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+i{
+  width: 10px;
+  height:10px;
+  border-radius: 50%;
+  background:#000;
+}
+
+@for $i from 1 through 10{
+  @for $j from 1 through 20{
+    .circle:nth-child(#{$i}) i:nth-child(#{$j}){
+      transform: rotate(18deg *$j) translate3d(4em,0,3em * ($i - 6));
+      animation:ani#{$i}-#{$j} 1s -0.05s * $j infinite;
+    }
+    @keyframes ani#{$i}-#{$j}{
+      100%{
+        transform: rotate(18deg *$j) translate3d(4em,0,3em * ($i - 7));
+      }
+    }   
+  }
+}

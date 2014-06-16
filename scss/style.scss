@@ -1,65 +1,52 @@
-.loading{
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  position: relative;
-  transform-style: preserve-3d;
-  perspective: 800;
-  perspective-origin: center bottom;
-  box-reflect: below 0px linear-gradient(transparent 80%, #fff);
-  &:before{
-    content: '';
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background:#414444;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -15px;
-    margin-top: -15px;
-    transform:rotate(180deg) translate(0px,30px);
-    animation:loading_ball 3.6s linear infinite;
-    z-index: 2;
-  }
-  i{
-    width: 6px;
-    height: 30px;
-    position: absolute;
-    left: 50%;
-    top:50%;
-    margin-top: -15px;
-    margin-left: -3px;
-  }
-  b{
-    position: absolute;
-    width: 6px;
-    height: 30px;
-    background: #999;
-    border-radius:2px;
-  }
-}
 
-@for $i from 1 through 36{
-  .loading i:nth-of-type(#{$i}){
-    transform:rotate(10deg *$i) translate(0px,50px);
-    b{
-      animation:loading_b 3.6s ease-in-out -0.1s *$i infinite;
+.bg{
+  height:600px;
+  width: 800px;
+  overflow: hidden;
+  position:relative;
+}
+.group{
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}
+span{
+  width: 0px;
+  height:0px;
+  border-style:solid;
+  border-color:#000 transparent transparent transparent; 
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  
+}
+@for $j from 1 through 6{
+    $border-width:60px /pow(2,$j) *2;
+    .group:nth-child(#{$j}) span{
+      border-width:$border-width *1.732  $border-width;
+      margin-left:-$border-width;
+      margin-top: -$border-width *1.732;
     }
-  }
-}
-@keyframes loading_b{
-  50%{
-    transform: rotateX(-60deg);
-    box-shadow:0 8px 0 #777;
-  }
-  40%,60%{
-    transform: rotateX(0);
-    box-shadow:none;
-  }
-}
-@keyframes loading_ball{
-  100%{
-    transform:rotate(-180deg) translate(0px,30px);
-  }
+    @for $i from 1 through 6{
+      .group:nth-child(#{$j}) span:nth-child(#{$i}){
+        transform: rotate(60deg * $i ) translateX($border-width *2);  
+        animation: ani#{$j}-#{$i} 1s infinite;
+      }
+      @keyframes ani#{$j}-#{$i}{
+        100%{
+          transform: rotate(60deg * $i ) translateX($border-width *2 +100px); 
+        }
+      }
+    }
+    @for $i from 7 through 12{
+      .group:nth-child(#{$j}) span:nth-child(#{$i}){
+        transform: rotate(60deg * $i - 240deg) translate($border-width *3,$border-width *1.732);  
+      }
+    }
+    @for $i from 13 through 18{
+      .group:nth-child(#{$j}) span:nth-child(#{$i}){
+        transform: rotate(60deg * $i - 240deg) translate($border-width *2,$border-width *1.732 *2);  
+      }
+    }
 }
