@@ -1,0 +1,18 @@
+path { 
+  transform-origin: 400px 400px;
+  fill:none;
+  stroke:#3dc100;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+}
+@for $i from 1 through 60{
+  path:nth-of-type(#{$i}){
+    transform: rotate(6deg *$i) translate(250px,0);
+    animation: path 1s linear 0.1s *$i forwards;
+  }
+}
+@keyframes path {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
