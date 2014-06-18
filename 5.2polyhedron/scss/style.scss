@@ -1,0 +1,33 @@
+$border-width:100px;
+$border-num:20;
+div{
+  width: 250px;
+  height: 250px;
+  position:relative;
+  float: left;
+}
+div:nth-child(1),
+div:nth-child(2){
+  display: none;
+}
+span{
+  width: 0px;
+  height: 0px;
+  margin-top: -50px;
+  margin-left: -50px;
+  position: absolute;
+  border-style:solid;
+  border-color:#333 transparent transparent transparent;   
+  top:50%;
+  left: 50%;
+}
+@for $i from 1 through $border-num{
+  @for $j from 1 through $i{
+    div:nth-child(#{$i}) span:nth-child(#{$j}){
+      border-width:$border-width *cos(360deg /$i /2)  $border-width *sin(360deg /$i /2);
+      transform:rotate(360deg /$i *$j);
+    }
+    
+  }
+}
+  
