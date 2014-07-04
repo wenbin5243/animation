@@ -1,33 +1,189 @@
-$border-width:100px;
-$border-num:20;
-div{
-  width: 250px;
-  height: 250px;
-  position:relative;
-  float: left;
+html, body {
+  height: 100%;
 }
-div:nth-child(1),
-div:nth-child(2){
-  display: none;
+
+body {
+  overflow: hidden;
+  margin: 0;
+  perspective: 25.6em;
+  background: dimgrey;
+  color: white;
 }
-span{
-  width: 0px;
-  height: 0px;
-  margin-top: -50px;
-  margin-left: -50px;
+
+.polyhedron, .polyhedron *, .polyhedron *:before {
+  box-sizing: border-box;
   position: absolute;
-  border-style:solid;
-  border-color:#333 transparent transparent transparent;   
-  top:50%;
+  top: 50%;
   left: 50%;
+  transform-style: preserve-3d;
 }
-@for $i from 1 through $border-num{
-  @for $j from 1 through $i{
-    div:nth-child(#{$i}) span:nth-child(#{$j}){
-      border-width:$border-width *cos(360deg /$i /2)  $border-width *sin(360deg /$i /2);
-      transform:rotate(360deg /$i *$j);
-    }
-    
+
+.polyhedron {
+  transform: rotateY(0deg) rotateX(55.03838deg);
+  animation: ani 19s linear infinite;
+}
+
+@keyframes ani {
+  to {
+    transform: rotateY(360deg) rotateX(55.03838deg);
   }
 }
-  
+.polyhedron--pyramid--pentagonal:nth-child(1) {
+  transform: rotate(180deg) rotateY(36deg)  translateY(-8.90813em);
+  animation: split1 16s linear infinite alternate;
+}
+.polyhedron--pyramid--pentagonal:nth-child(1) .polygon:before {
+  background-color: rgba(255, 31, 31, 0.25);
+}
+
+@keyframes split1 {
+  0%, 20% {
+    transform: rotate(180deg) rotateY(36deg)  translateY(-8.90813em);
+  }
+
+  40% {
+    transform: rotate(180deg) rotateY(36deg)  translateY(-13.3622em);
+  }
+
+  60% {
+    transform: rotate(180deg) rotateY(36deg)  translateY(-13.3622em) rotate(180deg);
+  }
+
+  80%, 100% {
+    transform: rotate(180deg) rotateY(36deg)  translateY(-13.3622em) rotate(180deg) translateY(-4.45407em);
+  }
+}
+
+@for $i from 2 through 6{
+  .polyhedron--pyramid--pentagonal:nth-child(#{$i}) {
+    transform: rotate(180deg) rotateY(36deg) rotateY(36deg *2 *$i - 108deg) rotateX(63.43495deg)  translateY(-8.90813em);
+    animation: split#{$i} 16s linear infinite alternate;
+  }
+  .polyhedron--pyramid--pentagonal:nth-child(#{$i}) .polygon:before {
+    background-color: rgba(255, 31, 31, 0.25);
+  }
+
+  @keyframes split#{$i} {
+    0%, 20% {
+      transform: rotate(180deg) rotateY(36deg)  rotateY(36deg *2 *$i - 108deg) rotateX(63.43495deg) translateY(-8.90813em);
+    }
+
+    40% {
+      transform: rotate(180deg) rotateY(36deg)  rotateY(36deg *2 *$i - 108deg) rotateX(63.43495deg) translateY(-13.3622em);
+    }
+
+    60% {
+      transform: rotate(180deg) rotateY(36deg)  rotateY(36deg *2 *$i - 108deg) rotateX(63.43495deg) translateY(-13.3622em) rotate(180deg);
+    }
+
+    80%, 100% {
+      transform: rotate(180deg) rotateY(36deg)  rotateY(36deg *2 *$i - 108deg) rotateX(63.43495deg) translateY(-13.3622em) rotate(180deg) translateY(-4.45407em);
+    }
+  }
+}
+.polyhedron--pyramid--pentagonal:nth-child(7) {
+  transform:   translateY(-8.90813em);
+  animation: split7 16s linear infinite alternate;
+}
+.polyhedron--pyramid--pentagonal:nth-child(7) .polygon:before {
+  background-color: rgba(31, 255, 255, 0.25);
+}
+
+@keyframes split7 {
+  0%, 20% {
+    transform:   translateY(-8.90813em);
+  }
+
+  40% {
+    transform:   translateY(-13.3622em);
+  }
+
+  60% {
+    transform:   translateY(-13.3622em) rotate(180deg);
+  }
+
+  80%, 100% {
+    transform:   translateY(-13.3622em) rotate(180deg) translateY(-4.45407em);
+  }
+}
+@for $i from 8 through 12{
+  .polyhedron--pyramid--pentagonal:nth-child(#{$i}) {
+    transform:  rotateY(72deg *$i - 540deg) rotateX(63.43495deg) translateY(-8.90813em);
+    animation: split#{$i} 16s linear infinite alternate;
+  }
+  .polyhedron--pyramid--pentagonal:nth-child(#{$i}) .polygon:before {
+    background-color: rgba(31, 143, 255, 0.25);
+  }
+
+  @keyframes split#{$i} {
+    0%, 20% {
+      transform:  rotateY(72deg *$i - 540deg) rotateX(63.43495deg) translateY(-8.90813em);
+    }
+
+    40% {
+      transform:  rotateY(72deg *$i - 540deg) rotateX(63.43495deg) translateY(-13.3622em);
+    }
+
+    60% {
+      transform:  rotateY(72deg *$i - 540deg) rotateX(63.43495deg) translateY(-13.3622em) rotate(180deg);
+    }
+
+    80%, 100% {
+      transform:  rotateY(72deg *$i - 540deg) rotateX(63.43495deg) translateY(-13.3622em) rotate(180deg) translateY(-4.45407em);
+    }
+  }
+}
+.polyhedron__face:nth-child(1) {
+  transform: rotateY(0deg) translateZ(5.50553em) rotateX(69.92325deg);
+}
+.polyhedron__face:nth-child(1) .polygon:before {
+  background-image: linear-gradient(90deg, rgba(255, 31, 31, 0.25), transparent);
+}
+
+.polyhedron__face:nth-child(2) {
+  transform: rotateY(72deg) translateZ(5.50553em) rotateX(69.92325deg);
+}
+.polyhedron__face:nth-child(2) .polygon:before {
+  background-image: linear-gradient(90deg, rgba(210, 255, 31, 0.25), transparent);
+}
+
+.polyhedron__face:nth-child(3) {
+  transform: rotateY(144deg) translateZ(5.50553em) rotateX(69.92325deg);
+}
+.polyhedron__face:nth-child(3) .polygon:before {
+  background-image: linear-gradient(90deg, rgba(31, 255, 120, 0.25), transparent);
+}
+
+.polyhedron__face:nth-child(4) {
+  transform: rotateY(216deg) translateZ(5.50553em) rotateX(69.92325deg);
+}
+.polyhedron__face:nth-child(4) .polygon:before {
+  background-image: linear-gradient(90deg, rgba(31, 120, 255, 0.25), transparent);
+}
+
+.polyhedron__face:nth-child(5) {
+  transform: rotateY(288deg) translateZ(5.50553em) rotateX(69.92325deg);
+}
+.polyhedron__face:nth-child(5) .polygon:before {
+  background-image: linear-gradient(90deg, rgba(210, 31, 255, 0.25), transparent);
+}
+
+.polygon--triangle {
+  overflow: hidden;
+  margin: -3.54823em;
+  width: 7.09646em;
+  height: 7.09646em;
+  border: solid 0.125em;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(34.30936deg) skewY(21.38128deg) scaleX(0.93117);
+}
+.polygon--triangle:before {
+  margin: -4em;
+  width: 8em;
+  height: 8em;
+  border: solid 0.125em;
+  transform: scaleX(1.07391) skewY(-21.38128deg) rotate(-34.30936deg) translateY(-50%);
+  background: rgba(255, 192, 203, 0.25);
+  content: '';
+}

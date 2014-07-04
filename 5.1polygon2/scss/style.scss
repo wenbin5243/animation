@@ -1,0 +1,34 @@
+$r:80px;
+div{
+  width: 2*$r;
+  height: 2*$r;
+  background:#333;
+  float: left;
+  margin: 10px;
+}
+@for $i from 1 through 20{
+  div:nth-child(#{$i}){
+    -webkit-clip-path:polygon(
+      $r *cos(2 * pi() /$i *1) +$r  $r *sin(2 * pi() /$i *1) +$r,
+      $r *cos(2 * pi() /$i *2) +$r  $r *sin(2 * pi() /$i *2) +$r,
+      $r *cos(2 * pi() /$i *3) +$r  $r *sin(2 * pi() /$i *3) +$r,
+      $r *cos(2 * pi() /$i *4) +$r  $r *sin(2 * pi() /$i *4) +$r,
+      $r *cos(2 * pi() /$i *5) +$r  $r *sin(2 * pi() /$i *5) +$r,
+      $r *cos(2 * pi() /$i *6) +$r  $r *sin(2 * pi() /$i *6) +$r,
+      $r *cos(2 * pi() /$i *7) +$r  $r *sin(2 * pi() /$i *7) +$r,
+      $r *cos(2 * pi() /$i *8) +$r  $r *sin(2 * pi() /$i *8) +$r,
+      $r *cos(2 * pi() /$i *9) +$r  $r *sin(2 * pi() /$i *9) +$r,
+      $r *cos(2 * pi() /$i *10) +$r  $r *sin(2 * pi() /$i *10) +$r,
+      $r *cos(2 * pi() /$i *11) +$r  $r *sin(2 * pi() /$i *11) +$r,
+      $r *cos(2 * pi() /$i *12) +$r  $r *sin(2 * pi() /$i *12) +$r,
+      $r *cos(2 * pi() /$i *13) +$r  $r *sin(2 * pi() /$i *13) +$r,
+      $r *cos(2 * pi() /$i *14) +$r  $r *sin(2 * pi() /$i *14) +$r,
+      $r *cos(2 * pi() /$i *15) +$r  $r *sin(2 * pi() /$i *15) +$r,
+      $r *cos(2 * pi() /$i *16) +$r  $r *sin(2 * pi() /$i *16) +$r,
+      $r *cos(2 * pi() /$i *17) +$r  $r *sin(2 * pi() /$i *17) +$r,
+      $r *cos(2 * pi() /$i *18) +$r  $r *sin(2 * pi() /$i *18) +$r,
+      $r *cos(2 * pi() /$i *19) +$r  $r *sin(2 * pi() /$i *19) +$r,
+      $r *cos(2 * pi() /$i *20) +$r  $r *sin(2 * pi() /$i *20) +$r
+    );
+  }
+}

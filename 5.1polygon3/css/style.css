@@ -1,0 +1,107 @@
+div {
+  width: 160px;
+  height: 160px;
+  background: #333;
+  float: left;
+  margin: 10px;
+}
+
+div:nth-child(1) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(160px 80.0px, 160px 80.0px, 160px 80.0px, 160px 80.0px, 160px 80.0px);
+}
+
+div:nth-child(2) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(0px 80.0px, 0px 80.0px, 0px 80.0px, 160px 80.0px, 160px 80.0px);
+}
+
+div:nth-child(3) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(40.0px 149.28203px, 160px 80.0px, 40.0px 10.71797px, 40.0px 10.71797px, 40.0px 149.28203px);
+}
+
+div:nth-child(4) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(80px 160px, 80.0px 0px, 80.0px 160px, 0px 80.0px, 160px 80.0px);
+}
+
+div:nth-child(5) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(104.72136px 156.08452px, 15.27864px 32.97718px, 160px 80.0px, 15.27864px 127.02282px, 104.72136px 3.91548px);
+}
+
+div:nth-child(6) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(120px 149.28203px, 0px 80.0px, 120.0px 10.71797px, 40.0px 149.28203px, 40.0px 10.71797px);
+}
+
+div:nth-child(7) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(129.87918px 142.54652px, 7.92249px 114.7107px, 62.19833px 2.00577px, 62.19833px 157.99423px, 7.92249px 45.2893px);
+}
+
+div:nth-child(8) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(136.56854px 136.56854px, 23.43146px 136.56854px, 23.43146px 23.43146px, 80px 160px, 0px 80.0px);
+}
+
+div:nth-child(9) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(141.28356px 131.42301px, 40.0px 149.28203px, 4.82459px 52.63839px, 93.89185px 158.78462px, 4.82459px 107.36161px);
+}
+
+div:nth-child(10) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(144.72136px 127.02282px, 55.27864px 156.08452px, 0px 80.0px, 104.72136px 156.08452px, 15.27864px 127.02282px);
+}
+
+div:nth-child(11) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(147.30028px 123.25127px, 68.61481px 159.18572px, 3.24056px 102.5386px, 113.2332px 152.77056px, 27.61114px 140.45997px);
+}
+
+div:nth-child(12) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(149.28203px 120px, 80px 160px, 10.71797px 120.0px, 120px 149.28203px, 40.0px 149.28203px);
+}
+
+div:nth-child(13) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(150.83648px 117.17785px, 89.64293px 159.41671px, 20.11914px 133.04981px, 125.44518px 145.83871px, 51.63161px 154.8013px);
+}
+
+div:nth-child(14) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(152.07751px 114.7107px, 97.80167px 157.99423px, 30.12082px 142.54652px, 129.87918px 142.54652px, 62.19833px 157.99423px);
+}
+
+div:nth-child(15) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(153.08364px 112.53893px, 104.72136px 156.08452px, 40.0px 149.28203px, 133.53045px 139.45159px, 71.63772px 159.56175px);
+}
+
+div:nth-child(16) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(153.91036px 110.61467px, 110.61467px 153.91036px, 49.38533px 153.91036px, 136.56854px 136.56854px, 80px 160px);
+}
+
+div:nth-child(17) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(154.59778px 108.89933px, 115.65907px 151.61306px, 58.10696px 156.94605px, 139.12071px 133.89565px, 87.38147px 159.65873px);
+}
+
+div:nth-child(18) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(155.17541px 107.36161px, 120px 149.28203px, 66.10815px 158.78462px, 141.28356px 131.42301px, 93.89185px 158.78462px);
+}
+
+div:nth-child(19) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(155.66538px 105.97596px, 123.75585px 146.97332px, 73.39365px 159.72676px, 143.13124px 129.13702px, 99.63884px 157.55202px);
+}
+
+div:nth-child(20) {
+  box-shadow: inset 0 0 0 80px #fff;
+  -webkit-clip-path: polygon(156.08452px 104.72136px, 127.02282px 144.72136px, 80px 160px, 144.72136px 127.02282px, 104.72136px 156.08452px);
+}

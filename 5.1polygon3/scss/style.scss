@@ -1,0 +1,20 @@
+$r:80px;
+div{
+  width: 2*$r;
+  height: 2*$r;
+  background:#333;
+  float: left;
+  margin: 10px;
+}
+@for $i from 1 through 20{
+  div:nth-child(#{$i}){
+    box-shadow:inset 0 0 0 80px #fff;
+    -webkit-clip-path:polygon(
+      $r *cos(2 * pi() /$i *1) +$r  $r *sin(2 * pi() /$i *1) +$r,
+      $r *cos(2 * pi() /$i *3) +$r  $r *sin(2 * pi() /$i *3) +$r,
+      $r *cos(2 * pi() /$i *5) +$r  $r *sin(2 * pi() /$i *5) +$r,
+      $r *cos(2 * pi() /$i *2) +$r  $r *sin(2 * pi() /$i *2) +$r,
+      $r *cos(2 * pi() /$i *4) +$r  $r *sin(2 * pi() /$i *4) +$r
+    );
+  }
+}

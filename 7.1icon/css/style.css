@@ -1,0 +1,149 @@
+body {
+  background: #f89927;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ani4 3s linear infinite;
+}
+
+span {
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.icon span:nth-child(1) {
+  animation: ani1 3s linear infinite;
+}
+
+.icon span:nth-child(2) {
+  animation: ani2 3s linear infinite;
+}
+
+.icon span:nth-child(3) {
+  animation: ani3 3s linear infinite;
+}
+
+@keyframes ani1 {
+  9% {
+    width: 8px;
+    height: 8px;
+    margin-top: -25px;
+  }
+
+  13%,17% {
+    width: 8px;
+    height: 8px;
+    margin-top: -20px;
+  }
+
+  33% {
+    width: 80px;
+    margin-top: -20px;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  37%,55% {
+    width: 60px;
+    margin-top: -20px;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  62%,85% {
+    width: 60px;
+    margin-top: 0px;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  89% {
+    width: 80px;
+  }
+
+  98%,100% {
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+@keyframes ani2 {
+  9%,17% {
+    width: 8px;
+    height: 8px;
+  }
+
+  34% {
+    width: 80px;
+  }
+
+  38%,85% {
+    width: 60px;
+  }
+
+  89% {
+    width: 80px;
+  }
+
+  98%,100% {
+    width: 8px;
+    height: 8px;
+  }
+}
+@keyframes ani3 {
+  9% {
+    width: 8px;
+    height: 8px;
+    margin-top: 25px;
+  }
+
+  13%,17% {
+    width: 8px;
+    height: 8px;
+    margin-top: 20px;
+  }
+
+  35% {
+    width: 80px;
+    margin-top: 20px;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  39%,55% {
+    width: 60px;
+    margin-top: 20px;
+    transform: translate(-50%, -50%) rotate(0);
+  }
+
+  62%,85% {
+    width: 60px;
+    margin-top: 0px;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  89% {
+    width: 80px;
+  }
+
+  98%,100% {
+    width: 8px;
+    height: 8px;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+@keyframes ani4 {
+  69% {
+    transform: rotate(0);
+  }
+
+  77%,100% {
+    transform: rotate(-45deg);
+  }
+}
