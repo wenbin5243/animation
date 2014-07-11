@@ -12,21 +12,21 @@ div {
 
 span {
   border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
-  border-width: 433px 250px;
+  border-width: 259.8px 150px;
   border-style: solid;
   width: 0;
   height: 0;
   position: absolute;
   left: 50%;
-  margin-left: -250px;
+  margin-left: -150px;
   top: 50%;
-  margin-top: -216.5px;
+  margin-top: -129.9px;
 }
 
 span:before {
   content: '';
   border-color: transparent transparent rgba(0, 123, 123, 0.5) transparent;
-  border-width: 425px 242px;
+  border-width: 251.8px 142px;
   border-style: solid;
   width: 0;
   height: 0;
@@ -38,35 +38,35 @@ span:before {
 }
 
 span:nth-child(1) {
-  transform: translateY(-200px) rotate3d(0, 1, 0, 0deg) rotate3d(1, 0, 0, 35deg);
+  transform: translateY(0) rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 35deg);
 }
 
 span:nth-child(2) {
-  transform: translateY(-200px) rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 35deg);
+  transform: translateY(0) rotate3d(0, 1, 0, 180deg) rotate3d(1, 0, 0, 35deg);
 }
 
 span:nth-child(3) {
-  transform: translateY(-200px) rotate3d(0, 1, 0, 180deg) rotate3d(1, 0, 0, 35deg);
+  transform: translateY(0) rotate3d(0, 1, 0, 270deg) rotate3d(1, 0, 0, 35deg);
 }
 
 span:nth-child(4) {
-  transform: translateY(-200px) rotate3d(0, 1, 0, 270deg) rotate3d(1, 0, 0, 35deg);
+  transform: translateY(0) rotate3d(0, 1, 0, 360deg) rotate3d(1, 0, 0, 35deg);
 }
 
 span:nth-child(5) {
-  transform: translateY(508px) rotate3d(0, 1, 0, 0deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(287.22813px) rotate3d(0, 1, 0, 450deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 span:nth-child(6) {
-  transform: translateY(508px) rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(287.22813px) rotate3d(0, 1, 0, 540deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 span:nth-child(7) {
-  transform: translateY(508px) rotate3d(0, 1, 0, 180deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(287.22813px) rotate3d(0, 1, 0, 630deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 span:nth-child(8) {
-  transform: translateY(508px) rotate3d(0, 1, 0, 270deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(287.22813px) rotate3d(0, 1, 0, 720deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 @keyframes ani {

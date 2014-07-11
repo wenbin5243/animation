@@ -6,7 +6,7 @@ html, body {
 
 div {
   transform-style: preserve-3d;
-  transform: rotateX(10deg) rotateY(0deg);
+  transform: rotate3d(0, 1, 0, 0deg);
   animation: ani 6s linear infinite;
 }
 
@@ -38,23 +38,27 @@ span:before {
 }
 
 span:nth-child(1) {
-  transform: rotateY(120deg) rotateX(19.5deg);
+  transform: translateY(-200px) rotate3d(0, 1, 0, 72deg) rotate3d(1, 0, 0, 53deg);
 }
 
 span:nth-child(2) {
-  transform: rotateY(240deg) rotateX(19.5deg);
+  transform: translateY(-200px) rotate3d(0, 1, 0, 144deg) rotate3d(1, 0, 0, 53deg);
 }
 
 span:nth-child(3) {
-  transform: rotateY(360deg) rotateX(19.5deg);
+  transform: translateY(-200px) rotate3d(0, 1, 0, 216deg) rotate3d(1, 0, 0, 53deg);
 }
 
 span:nth-child(4) {
-  transform: rotateX(90deg) translateZ(-408px) translateY(-286px);
+  transform: translateY(-200px) rotate3d(0, 1, 0, 288deg) rotate3d(1, 0, 0, 53deg);
+}
+
+span:nth-child(5) {
+  transform: translateY(-200px) rotate3d(0, 1, 0, 360deg) rotate3d(1, 0, 0, 53deg);
 }
 
 @keyframes ani {
   100% {
-    transform: rotateX(10deg) rotateY(360deg);
+    transform: rotate3d(0, 1, 0, 360deg);
   }
 }

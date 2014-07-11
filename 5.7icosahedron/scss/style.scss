@@ -1,4 +1,4 @@
-$border-width:300px;
+$border-width:500px;
 html, body {
   height: 100%;
   margin:0; 
@@ -34,17 +34,13 @@ span:before{
   transform: translate(-50%,-50%);
   margin-top: 4px;
 }
-@for $i from 1 through 4{
+@for $i from 1 through 5{
   span:nth-child(#{$i}){
-    transform:translateY(0) rotate3d(0,1,0,90deg *$i) rotate3d(1,0,0,35deg);
+    transform:translateY(-200px) rotate3d(0,1,0,72deg * $i) rotate3d(1,0,0,53deg);
   }
 }
 
-@for $i from 5 through 8{
-  span:nth-child(#{$i}){  
-    transform:translateY(sqrt(pow($border-width,2) * 11 / 12)) rotate3d(0,1,0,90deg *$i) rotate3d(1,0,0,35deg) rotate3d(0,0,1,180deg);
-  }
-}
+
 @keyframes ani{
   100%{
     transform:rotate3d(0,1,0,360deg);
