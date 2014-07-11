@@ -1,0 +1,76 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+div {
+  transform-style: preserve-3d;
+  transform: rotate3d(0, 1, 0, 0deg);
+  animation: ani 6s linear infinite;
+}
+
+span {
+  border-color: transparent transparent rgba(255, 255, 255, 0.5) transparent;
+  border-width: 433px 250px;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -250px;
+  top: 50%;
+  margin-top: -216.5px;
+}
+
+span:before {
+  content: '';
+  border-color: transparent transparent rgba(0, 123, 123, 0.5) transparent;
+  border-width: 425px 242px;
+  border-style: solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 4px;
+}
+
+span:nth-child(1) {
+  transform: translateY(-200px) rotate3d(0, 1, 0, 0deg) rotate3d(1, 0, 0, 35deg);
+}
+
+span:nth-child(2) {
+  transform: translateY(-200px) rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 35deg);
+}
+
+span:nth-child(3) {
+  transform: translateY(-200px) rotate3d(0, 1, 0, 180deg) rotate3d(1, 0, 0, 35deg);
+}
+
+span:nth-child(4) {
+  transform: translateY(-200px) rotate3d(0, 1, 0, 270deg) rotate3d(1, 0, 0, 35deg);
+}
+
+span:nth-child(5) {
+  transform: translateY(508px) rotate3d(0, 1, 0, 0deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+}
+
+span:nth-child(6) {
+  transform: translateY(508px) rotate3d(0, 1, 0, 90deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+}
+
+span:nth-child(7) {
+  transform: translateY(508px) rotate3d(0, 1, 0, 180deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+}
+
+span:nth-child(8) {
+  transform: translateY(508px) rotate3d(0, 1, 0, 270deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+}
+
+@keyframes ani {
+  100% {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}

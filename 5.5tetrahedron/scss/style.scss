@@ -1,0 +1,42 @@
+$border-width:500px;
+html, body {
+  height: 100%;
+  margin:0; 
+}
+div{
+  transform-style: preserve-3d;
+  transform: rotateX(10deg) rotateY(0deg);
+  animation: ani 6s linear infinite;
+}
+span{
+  border-color: transparent transparent rgba(0,0,0,0.2) transparent;
+  border-width:$border-width/2*1.732 $border-width/2;
+  border-style:solid;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  margin-left: -$border-width/2;
+  top:50%;
+  margin-top:-$border-width/4*1.732;
+}
+span:nth-child(1){
+  border-color: transparent transparent rgba(255,0,0,0.2) transparent;
+  transform: rotateY(0deg) rotateX(19.5deg);
+}
+span:nth-child(2){
+  border-color: transparent transparent rgba(0,255,0,0.2) transparent;
+  transform: rotateY(120deg) rotateX(19.5deg);
+}
+span:nth-child(3){
+  border-color: transparent transparent rgba(0,0,255,0.2) transparent;
+  transform: rotateY(240deg) rotateX(19.5deg);
+}
+span:nth-child(4){
+  transform: rotateX(90deg) translateZ(-409px) translateY(-286px);
+}
+@keyframes ani{
+  100%{
+    transform: rotateX(10deg) rotateY(360deg);
+  }
+}
