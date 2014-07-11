@@ -2,11 +2,10 @@ meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-sca
 script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"
 link href="../css/style.css" rel="stylesheet"
 .icon
-  -for i in 1..8 do
-    i
+  .dot
+	  -for i in 1..8 do
+	    span
   .circle
-  .line.line1
-  .line.line2
-  .line.line3
-  .line.line4
-  .line.line5
+  .line
+	  -for i in 1..17 do
+	    span
