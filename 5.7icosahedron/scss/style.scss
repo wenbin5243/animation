@@ -1,13 +1,19 @@
-$border-width:500px;
+$border-width:200px;
 html, body {
   height: 100%;
   margin:0; 
-  background: rgba(0,0,0,0.5)
+  background: rgba(0,0,0,0.5);
+  
+}
+.sharp{
+  animation:ani 4s linear infinite;
 }
 div{
   transform-style: preserve-3d;
-  transform:rotate3d(0,1,0,0deg);
-  animation: ani 6s linear infinite;
+  transform:translate(-50%,-50%) rotate3d(0,1,0,72deg);
+  position: absolute;
+  left: 50%;
+  top:50%;
 }
 span{
   border-color: transparent transparent rgba(255,255,255,0.5) transparent;
@@ -19,7 +25,7 @@ span{
   left: 50%;
   margin-left: -$border-width/2;
   top:50%;
-  margin-top:-$border-width/4*1.732;
+  margin-top:-$border-width*1.732;
 }
 span:before{
   content:'';
@@ -35,14 +41,17 @@ span:before{
   margin-top: 4px;
 }
 @for $i from 1 through 5{
-  span:nth-child(#{$i}){
-    transform:translateY(-200px) rotate3d(0,1,0,72deg * $i) rotate3d(1,0,0,53deg);
+  div span:nth-child(#{$i}){
+    transform:rotate3d(0,1,0,72deg * $i) rotate3d(1,0,0,51.5deg);
   }
 }
-
-
+@for $i from 1 through 5{
+  .sharp div:nth-child(#{$i}){
+    transform: translateY(51px) rotateY(72deg *$i + 36deg) rotateX(116deg) translateZ(31px);
+  }
+}
 @keyframes ani{
   100%{
-    transform:rotate3d(0,1,0,360deg);
+    transform: rotateY(360deg);
   }
 }

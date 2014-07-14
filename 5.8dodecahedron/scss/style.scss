@@ -1,0 +1,63 @@
+$r:100px;
+@mixin polygon($r,$i){
+  -webkit-clip-path:polygon(
+    $r *cos(2 * pi() /$i *1) +$r  $r *sin(2 * pi() /$i *1) +$r,
+    $r *cos(2 * pi() /$i *2) +$r  $r *sin(2 * pi() /$i *2) +$r,
+    $r *cos(2 * pi() /$i *3) +$r  $r *sin(2 * pi() /$i *3) +$r,
+    $r *cos(2 * pi() /$i *4) +$r  $r *sin(2 * pi() /$i *4) +$r,
+    $r *cos(2 * pi() /$i *5) +$r  $r *sin(2 * pi() /$i *5) +$r
+  );
+}
+html, body {
+  height: 100%;
+  margin:0; 
+  background: rgba(0,0,0,0.5);
+}
+div{
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%) rotateX(0deg);
+  animation: ani 8s linear infinite;
+}
+span,
+span:before{ 
+  width: 2 *$r;
+  height: 2 *$r;
+  position: absolute;
+  left: 50%;
+  margin-left: -$r;
+  top:50%;
+  margin-top:-$r;
+}
+span{
+  background:#fff;
+  @include polygon($r,5);
+}
+span:before{
+  content: '';
+  background: rgba(0,123,123,0.8);
+  @include polygon($r - 0.5,5);
+}
+span:nth-child(6){
+  transform:translateY(-58px - 71px) rotateX(90deg) rotateZ(-18deg);
+}
+@for $i from 1 through 5{
+  span:nth-child(#{$i}){
+    transform:translateY(-58px) rotateY(360deg /5 * $i) translateZ(117px) rotateX(27deg) rotateZ(162deg);
+  }
+}
+@for $i from 7 through 11{
+  span:nth-child(#{$i}){
+    transform:translateY(58px) rotateX(180deg) rotateY(-72deg) rotateY(360deg /5 * $i) translateZ(117px) rotateX(27deg) rotateZ(162deg);
+  }
+}
+span:nth-child(12){
+  transform:translateY(58px + 71px) rotateX(180deg) rotateY(-72deg)  rotateX(90deg) rotateZ(-18deg);
+}
+@keyframes ani{
+  100%{
+    transform: translate(-50%,-50%) rotateX(360deg);
+  }
+}
