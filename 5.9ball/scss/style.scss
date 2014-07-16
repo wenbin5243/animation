@@ -1,0 +1,45 @@
+html, body {
+  height: 100%;
+  margin:0; 
+  background: rgba(0,0,0,0.5);
+  transform-style: preserve-3d;
+}
+.circle{
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate3d(-50%,-50%,0);
+  animation: ani 8s linear infinite;
+}
+.ball{ 
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  margin-left: -10px;
+  top:50%;
+  margin-top:-10px;
+  background:#fff;
+  border-radius: 50%;
+}
+
+@for $i from 1 through 20{
+  .circle:nth-child(#{$i}){
+    transform: rotate3d(0,1,0,18deg *$i);
+  }
+  @for $j from 1 through 36{
+    .circle:nth-child(#{$i}) .ball:nth-child(#{$j}){
+      transform: rotate3d(0,0,1,10deg *$j) translate3d(130px,0,0) rotate3d(0,1,0,-18deg *$i);
+      animation: ani#{$i}-#{$j} 2s ease-in-out 0.1s * $i infinite;
+    }
+    @keyframes ani#{$i}-#{$j}{
+      10%{
+        transform: rotate3d(0,0,1,10deg *$j) translate3d(130px +80px,0,0) rotate3d(0,1,0,-18deg *$i);
+      }
+      20%,100%{
+        transform: rotate3d(0,0,1,10deg *$j) translate3d(130px,0,0) rotate3d(0,1,0,-18deg *$i);
+      }
+    }
+  }
+}

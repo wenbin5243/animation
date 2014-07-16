@@ -1,24 +1,32 @@
-size(640, 360, P3D);
-background(0);
+int currentFrame=0;
+void setup(){
+  size(640, 360, P3D);
+}
 
-translate(width/2, height/2, 0);
-stroke(255);
-rotateX(PI/2);
-rotateZ(-PI/6);
-noFill();
+void draw(){
+  currentFrame=currentFrame+1;
+  background(0);
 
-beginShape();
-vertex( 100, -100, -100);
-vertex(   0,    0,  100);
-vertex( 100,  100, -100);
+  translate(width/2, height/2, 0);
+  stroke(255);
+  rotateX(PI/6);
+  rotateZ(PI/180*currentFrame);
+  noFill();
 
-vertex(-100, 100, -100);
-vertex(   0,    0,  100);
+  beginShape();
+  vertex( 100, -100, -100);
+  vertex(   0,    0,  100);
+  vertex( 100,  100, -100);
 
-vertex( 100, -100, -100);
-vertex( 100,  100, -100);
+  vertex(-100, 100, -100);
+  vertex(   0,    0,  100);
 
-vertex( 100, -100, -100);
-vertex(-100, 100, -100);
+  vertex( 100, -100, -100);
+  vertex( 100,  100, -100);
 
-endShape();
+  vertex( 100, -100, -100);
+  vertex(-100, 100, -100);
+
+  endShape();
+}
+  
