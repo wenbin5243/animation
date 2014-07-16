@@ -2,7 +2,6 @@ html, body {
   height: 100%;
   margin:0; 
   background: rgba(0,0,0,0.5);
-  transform-style: preserve-3d;
 }
 .circle{
   transform-style: preserve-3d;
@@ -31,7 +30,7 @@ html, body {
   @for $j from 1 through 36{
     .circle:nth-child(#{$i}) .ball:nth-child(#{$j}){
       transform: rotate3d(0,0,1,10deg *$j) translate3d(130px,0,0) rotate3d(0,1,0,-18deg *$i);
-      animation: ani#{$i}-#{$j} 2s ease-in-out 0.1s * $i infinite;
+      animation: ani#{$i}-#{$j} 2s ease-in-out -0.2s * $i infinite;
     }
     @keyframes ani#{$i}-#{$j}{
       10%{
