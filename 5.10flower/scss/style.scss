@@ -1,0 +1,35 @@
+html, body {
+  height: 100%;
+  margin:0; 
+  background: rgba(0,0,0,0.5);
+}
+div{
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate3d(-50%,-50%,0) rotate3d(1,0,0,30deg);
+}
+span{ 
+  width: 30px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  background:#fff;
+  border-radius: 50%;
+}
+@for $i from 1 through 20{
+  span:nth-child(#{$i}){
+    transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,18deg *$i) rotate3d(1,0,0,70deg) translate3d(0,100px,0) ;
+    animation: ani-#{$i} 5s linear infinite;
+  }
+  @keyframes ani-#{$i}{
+    10%,#{40% + $i}{
+      transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,18deg *$i) rotate3d(1,0,0,0deg) translate3d(0,100px,0) ;
+    }
+    #{50% + $i},100%{
+      transform: translate3d(-50%,-50%,0) rotate3d(0,0,1,18deg *$i) rotate3d(1,0,0,0deg) translate3d(0,100px,-1200px) ;
+    }
+  }
+}
