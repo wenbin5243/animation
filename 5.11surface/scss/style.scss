@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+  margin:0; 
+  background: rgba(0,0,0,0.5);
+}
+div{
+  transform-style: preserve-3d;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate3d(-50%,-50%,0) rotate3d(1,0,0,5deg);
+}
+span{ 
+  width: 2px;
+  height: 300px;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  background:url(https://d13yacurqjgara.cloudfront.net/users/129991/screenshots/660111/sailingboatillustration.png) no-repeat;
+}
+@for $i from 1 through 200{
+  span:nth-child(#{$i}){
+    transform: translate3d(-50%,-50%,0) rotate3d(0,1,0,360deg /800 *$i) translate3d(200px,0,0) rotate3d(0,-1,0,360deg /800 *$i);
+    background-position:-2px *$i 0;
+    animation: ani-#{$i} 1s ease-in-out -1s /200 *$i infinite;
+  }
+  @keyframes ani-#{$i}{
+    50%{
+      transform:translate3d(-50%,-50%,0) rotate3d(0,1,0,360deg /800 *$i) translate3d(180px,0,0px) rotate3d(0,-1,0,360deg /800 *$i);
+    }
+  }
+}

@@ -8,6 +8,7 @@ div{
 span{
   width: 30px;
   height: 30px;
+  display: inline-block;
 }
 @for $i from 1 through 8{
   span:nth-child(#{$i}){
