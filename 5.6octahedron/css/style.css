@@ -6,8 +6,11 @@ html, body {
 
 div {
   transform-style: preserve-3d;
-  transform: rotate3d(0, 1, 0, 0deg);
+  transform: translate(-50%, -50%) rotate3d(0, 1, 0, 0deg);
   animation: ani 6s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 span {
@@ -18,9 +21,9 @@ span {
   height: 0;
   position: absolute;
   left: 50%;
-  margin-left: -150px;
   top: 50%;
-  margin-top: -129.9px;
+  margin-left: -150px;
+  margin-top: -519.6px;
 }
 
 span:before {
@@ -54,23 +57,23 @@ span:nth-child(4) {
 }
 
 span:nth-child(5) {
-  transform: translateY(287.22813px) rotate3d(0, 1, 0, 450deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(422.25162px) rotate3d(0, 1, 0, 450deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 span:nth-child(6) {
-  transform: translateY(287.22813px) rotate3d(0, 1, 0, 540deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(422.25162px) rotate3d(0, 1, 0, 540deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 span:nth-child(7) {
-  transform: translateY(287.22813px) rotate3d(0, 1, 0, 630deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(422.25162px) rotate3d(0, 1, 0, 630deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 span:nth-child(8) {
-  transform: translateY(287.22813px) rotate3d(0, 1, 0, 720deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
+  transform: translateY(422.25162px) rotate3d(0, 1, 0, 720deg) rotate3d(1, 0, 0, 35deg) rotate3d(0, 0, 1, 180deg);
 }
 
 @keyframes ani {
   100% {
-    transform: rotate3d(0, 1, 0, 360deg);
+    transform: translate(-50%, -50%) rotate3d(0, 1, 0, 360deg);
   }
 }

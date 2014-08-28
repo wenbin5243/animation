@@ -21,14 +21,14 @@ html,body{
   transform-origin: center center -70px;
 }
 
-@for $i from 1 through 30{
+@for $i from 1 through 40{
   .circle:nth-child(#{$i}){
-    animation:rotate#{$i} 2s -0.2s * $i infinite;
-    transform:translateX(50px * $i) translateZ(70px) rotatex(0deg);
+    animation:rotate#{$i} 2s linear -0.2s * $i infinite;
+    transform:translateX(50px * $i - 50px) translateZ(70px) rotatex(0deg);
   }
   @keyframes rotate#{$i}{
     100%{
-      transform:translateX(50px * $i) translateZ(70px) rotateX(360deg);
+      transform:translateX(50px * $i - 50px) translateZ(70px) rotateX(360deg);
     }
   }
 }
