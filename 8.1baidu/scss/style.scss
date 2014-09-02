@@ -1,0 +1,91 @@
+html,body{
+  width:100%;
+  height: 100%;
+  margin: 0;
+  background: #f9bf35;
+}
+*{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform:translate3d(-50%,-50%,0);
+}
+@for $i from 1 through 6{
+  .circle:nth-child(#{$i}){
+    border: 1px solid #fff;
+    
+    animation:circle-ani1-#{$i} 10s linear forwards,
+              circle-ani3 0.1s linear 11s forwards;
+  }
+  @keyframes circle-ani1-#{$i}{
+
+    @for $j from 1 through 20{
+      #{5% * $j}{
+        @if($j %2 ==1){
+          transform:translate(random(10)+px,-20px *$j);
+        }
+        @else{
+          transform:translate(-(random(10)+px),-20px *$j);
+        }
+      }
+      
+    }
+    0%,99%{
+      $random-width:random(30,50);
+      width: $random-width;
+      height: $random-width;
+      margin-left: random(-300,300);
+      margin-top: random(0,600);
+      border-radius:50%;
+      background:none;
+    }
+    100%{
+      transform: translate(-50%,-50%);
+      margin-left: 0;
+      margin-top: 0;
+      border-radius:0;
+      width: 20px;
+      height: 20px;
+      background:#fff;
+    }
+  }
+}
+@keyframes circle-ani3{
+  100%{
+    opacity: 0;
+  }
+}
+
+@for $i from 1 through 21{
+  .line:nth-child(#{$i}){
+    width: 4px;
+    height:4px;
+    background:#fff;
+    opacity: 0;
+  }
+  .line:nth-child(#{$i}){
+    animation: line-ani2-#{$i} 0.5s ease-in-out 11s forwards,
+                line-ani3-#{$i} 0.5s ease-in-out 11.6s infinite alternate;
+  }
+  @keyframes line-ani2-#{$i}{
+    0%,100%{
+      opacity: 1;
+    }
+    @if($i<=10){
+      100%{
+        opacity: 1;
+        margin-left: 8px * $i;
+      }
+    }@if($i>11){
+      100%{
+        opacity: 1;
+        margin-left: -8px * ($i - 11);
+      }
+    }  
+  }
+  @keyframes line-ani3-#{$i}{
+    100%{
+      height: random(10,100);
+    }
+  }
+}
