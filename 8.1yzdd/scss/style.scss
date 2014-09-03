@@ -1,0 +1,152 @@
+html,body{
+  width:100%;
+  height: 100%;
+  margin: 0;
+  background: #014db5;
+}
+.text,.lines,.line,.circle{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform:translate3d(-50%,-50%,0);
+}
+@for $i from 1 through 6{
+  .circle:nth-child(#{$i}){
+    $random-width:random(30,50)+px;
+    width: $random-width;
+    height: $random-width;
+    margin-left: random(-300,300)+px;
+    margin-top: random(500,700)+px;
+    border-radius:50%;
+    border: 1px solid #fff;    
+    
+  }
+  .ani1 .circle:nth-child(#{$i}){
+    animation:circle-ani1-#{$i} 10s linear infinite;
+  }
+  .ani2 .circle:nth-child(#{$i}){
+    animation:circle-ani2-#{$i} 0.5s ease-in-out forwards,
+              fadeout 0.5s steps(1) 1s forwards;
+  }
+  @keyframes circle-ani1-#{$i}{
+
+    @for $j from 1 through 20{
+      #{5% * $j}{
+        @if($j %2 ==1){
+          transform:translate(random(5)+px,-60px *$j);
+        }
+        @else{
+          transform:translate(-(random(5)+px),-60px *$j);
+        }
+      }     
+    }  
+  }
+  @keyframes circle-ani2-#{$i}{
+    0%{
+      $random-width:random(30,50)+px;
+      width: $random-width;
+      height: $random-width;
+      margin-left: random(-500,500)+px;
+      margin-top: random(-1000,1000)+px;
+    }
+    90%{
+      transform: translate(-50%,-50%);
+      margin-left: 0;
+      margin-top: 0;
+      background:none;
+      border-radius:50%;
+      border: 1px solid #fff;
+    }
+    100%{
+      transform: translate(-50%,-50%);
+      margin-left: 0;
+      margin-top: 0;
+      width: 20px;
+      height: 20px;
+      background:#fff;
+      border-radius:0;
+    }
+  }
+}
+  
+
+@for $i from 1 through 21{
+  .ani2 .line:nth-child(#{$i}){
+    width: 4px;
+    height:4px;
+    background:#fff;
+    opacity: 0;
+  }
+  .ani2 .line:nth-child(#{$i}){
+    animation: line-ani1-#{$i} 0.5s ease-in-out 1.5s forwards,
+                line-ani2-#{$i} 0.5s ease-in-out 2s infinite alternate;
+  }
+  @keyframes line-ani1-#{$i}{
+    0%,100%{
+      opacity: 1;
+    }
+    @if($i<=10){
+      100%{
+        opacity: 1;
+        margin-left: 8px * $i;
+      }
+    }@if($i>11){
+      100%{
+        opacity: 1;
+        margin-left: -8px * ($i - 11);
+      }
+    }  
+  }
+  @keyframes line-ani2-#{$i}{
+    100%{
+      height: random(30,70)+px;
+    }
+  }
+
+  .ani3 .line:nth-child(#{$i}){
+      width: 4px;
+      height:4px;
+      background:#fff;
+      margin-left: 8px * $i;
+      animation: line-ani3 2.1s linear 0.1s *$i infinite;
+  }
+}
+.ani3 .lines{
+  position:absolute;
+  margin-left:-8px *11;
+}
+@keyframes line-ani3{
+  4%,12%{
+    height: 12px;
+  }
+  8%{
+    height: 20px;
+  }
+  16%,100%{
+    height: 4px;
+  }
+}
+.text{ 
+  color:#fff;
+  margin-top: 100px;
+  opacity: 0;
+}
+.ani2 .text:nth-child(1){
+  animation:fadein 0.5s steps(1) 1s forwards;
+}
+.ani3 .text:nth-child(2){
+  opacity: 1;
+}
+.ani3 .circle{
+  display: none;
+}
+@keyframes fadeout{
+  100%{
+    opacity: 0;
+  }
+}
+@keyframes fadein{
+  100%{
+    opacity: 1;
+  }
+}
