@@ -3,6 +3,7 @@ html,body{
   height: 100%;
   margin: 0;
   background: #014db5;
+  transform-style: preserve-3d;
 }
 .text,.lines,.line,.circle{
   position: absolute;
