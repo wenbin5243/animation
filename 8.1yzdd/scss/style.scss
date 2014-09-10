@@ -4,6 +4,7 @@ html,body{
   margin: 0;
   background: #014db5;
   transform-style: preserve-3d;
+  perspective: 700;
 }
 .text,.lines,.line,.circle{
   position: absolute;
@@ -11,35 +12,34 @@ html,body{
   left: 50%;
   transform:translate3d(-50%,-50%,0);
 }
-@for $i from 1 through 6{
+@for $i from 1 through 20{
   .circle:nth-child(#{$i}){
     $random-width:random(30,50)+px;
     width: $random-width;
     height: $random-width;
-    margin-left: random(-300,300)+px;
-    margin-top: random(500,700)+px;
+    margin-left: random(-200,200)+px;
+    margin-top: random(-200,200)+px;
     border-radius:50%;
     border: 1px solid #fff;    
-    
+    transform:translate3d(-50%,-50%,random(100)+px);
   }
   .ani1 .circle:nth-child(#{$i}){
-    animation:circle-ani1-#{$i} 10s linear infinite;
+    animation:circle-ani1-#{$i} 2s linear -0.3s *$i infinite;
   }
   .ani2 .circle:nth-child(#{$i}){
-    animation:circle-ani2-#{$i} 0.5s ease-in-out forwards,
+    animation:circle-ani2-#{$i} 0.8s ease-in-out -0.05s *$i forwards,
               fadeout 0.5s steps(1) 1s forwards;
   }
   @keyframes circle-ani1-#{$i}{
-
-    @for $j from 1 through 20{
-      #{5% * $j}{
-        @if($j %2 ==1){
-          transform:translate(random(5)+px,-60px *$j);
-        }
-        @else{
-          transform:translate(-(random(5)+px),-60px *$j);
-        }
-      }     
+    0%{
+      opacity: 0;
+    }
+    10%{
+      opacity: 1;
+    }
+    100%{
+      opacity: 1;
+      transform: translate3d(-50%,-50%,800px)
     }  
   }
   @keyframes circle-ani2-#{$i}{
@@ -47,11 +47,12 @@ html,body{
       $random-width:random(30,50)+px;
       width: $random-width;
       height: $random-width;
-      margin-left: random(-500,500)+px;
-      margin-top: random(-1000,1000)+px;
+      margin-left: random(-200,200)+px;
+      margin-top: random(-200,200)+px;
+      transform: translate3d(-50%,-50%,random(0,800)+px)
     }
     90%{
-      transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%,0);
       margin-left: 0;
       margin-top: 0;
       background:none;
